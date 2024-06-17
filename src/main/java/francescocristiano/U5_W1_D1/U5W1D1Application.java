@@ -9,6 +9,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+import java.util.stream.Collectors;
+
 @SpringBootApplication
 public class U5W1D1Application {
 
@@ -22,7 +24,7 @@ public class U5W1D1Application {
         System.out.println();
         System.out.println("Pizze");
         for (Pizza pizza : menu.getPizzas()) {
-            System.out.println(pizza.getName() + " - " + pizza.getToppings().stream().map(Topping::getName).toList() + " - " + pizza.getPrice() + "€" + " - " + pizza.getCalories() + "kcal");
+            System.out.println(pizza.getName() + " - " + pizza.getToppings().stream().map(Topping::getName).collect(Collectors.joining(", ")) + " - " + pizza.getPrice() + "€" + " - " + pizza.getCalories() + "kcal");
         }
         System.out.println();
         System.out.println("Toppings");
@@ -32,7 +34,8 @@ public class U5W1D1Application {
         System.out.println();
         System.out.println("Drinks");
         for (Drink drink : menu.getDrinks()) {
-            System.out.println(drink.getName() + " - " + drink.getPrice() + "€" + " - " + drink.getCalories() + "kcal");
+            String alcoholInfo = drink.getAlcoholConcentration() != null ? " - Alcohol: " + drink.getAlcoholConcentration() : "";
+            System.out.println(drink.getName() + " - " + drink.getPrice() + "€" + " - " + alcoholInfo + " - " + drink.getCalories() + "kcal");
         }
 
     }

@@ -1,7 +1,6 @@
 package francescocristiano.U5_W1_D1.entities;
 
 
-import jakarta.annotation.Nullable;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
@@ -14,7 +13,6 @@ public class Drink {
     private double price;
     private int calories;
     private double size;
-    @Nullable
     private Double alcoholConcentration;
 
     @Override
