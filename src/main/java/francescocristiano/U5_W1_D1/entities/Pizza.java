@@ -7,6 +7,7 @@ import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Getter
 @Setter
@@ -63,7 +64,7 @@ public class Pizza {
     public String toString() {
         return "Pizza{" +
                 "name='" + name + '\'' +
-                ", toppings=" + toppings.stream().map(Topping::getName).toList() +
+                ", toppings=" + toppings.stream().map(Topping::getName).collect(Collectors.joining(", ")) +
                 ", price=" + price +
                 ", calories=" + calories +
                 '}';

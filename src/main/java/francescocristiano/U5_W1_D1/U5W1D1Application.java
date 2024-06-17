@@ -17,6 +17,7 @@ public class U5W1D1Application {
 
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(BeanConfiguration.class);
         Menu menu = context.getBean(Menu.class);
+        System.out.println();
         System.out.println("Menu");
         System.out.println();
         System.out.println("Pizze");

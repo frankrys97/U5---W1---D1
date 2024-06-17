@@ -79,7 +79,7 @@ public class BeanConfiguration {
     }
 
     private Pizza createPizzaXl(Pizza pizza) {
-        return new Pizza(pizza.getName(), pizza.getPrice(), pizza.getCalories(), pizza.getToppings(), Size.XL);
+        return new Pizza(pizza.getName(), pizza.getPrice(), pizza.getCalories(), pizza.getToppings().stream().filter(topping -> !topping.getName().equals("Tomato") && !topping.getName().equals("Mozzarella")).toList(), Size.XL);
     }
 
     @Bean
