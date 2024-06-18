@@ -22,7 +22,7 @@ public class U5W1D1Application {
         System.out.println();
         System.out.println("Menu");
         System.out.println();
-        System.out.println("Pizze");
+        System.out.println("Pizzas");
         for (Pizza pizza : menu.getPizzas()) {
             System.out.println(pizza.getName() + " - " + pizza.getToppings().stream().map(Topping::getName).collect(Collectors.joining(", ")) + " - " + pizza.getPrice() + "€" + " - " + pizza.getCalories() + "kcal");
         }
